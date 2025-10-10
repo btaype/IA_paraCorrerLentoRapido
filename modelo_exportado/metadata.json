@@ -1,0 +1,37 @@
+{
+    "nombre_modelo": "RandomForest",
+    "accuracy": 1.0,
+    "clases": {
+        "0": "Parado",
+        "1": "Corriendo Nv1",
+        "2": "Corriendo Nv2"
+    },
+    "fecha_entrenamiento": "2025-10-10 00:20:17",
+    "num_caracteristicas": 21,
+    "ranking_modelos": [
+        {
+            "modelo": "RandomForest",
+            "accuracy": 1.0
+        },
+        {
+            "modelo": "SVM_RBF",
+            "accuracy": 1.0
+        },
+        {
+            "modelo": "SVM_Linear",
+            "accuracy": 1.0
+        },
+        {
+            "modelo": "KNN",
+            "accuracy": 1.0
+        },
+        {
+            "modelo": "DecisionTree",
+            "accuracy": 1.0
+        },
+        {
+            "modelo": "NaiveBayes",
+            "accuracy": 1.0
+        }
+    ]
+}
