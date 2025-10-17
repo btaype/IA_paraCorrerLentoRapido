@@ -37,12 +37,13 @@ class DetectorPostura:
         self.mp_pose = mp.solutions.pose
         self.pose = self.mp_pose.Pose(
             static_image_mode=False,
-            model_complexity=1,
+            model_complexity=0,
             smooth_landmarks=True,
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5
+            enable_segmentation=False,
+            min_detection_confidence=0.3,
+            min_tracking_confidence=0.3
         )
-        
+            
         self.ventana = ventana
         self.buffer = deque(maxlen=ventana)
     
@@ -125,11 +126,10 @@ mp_pose = mp.solutions.pose
 mp_drawing = mp.solutions.drawing_utils
 pose = mp_pose.Pose(
     static_image_mode=False,
-    model_complexity=0,
+    model_complexity=1,
     smooth_landmarks=True,
-    enable_segmentation=False,
-    min_detection_confidence=0.3,
-    min_tracking_confidence=0.3
+    min_detection_confidence=0.5,
+    min_tracking_confidence=0.5
 )
 
 # --- CARGAR NUEVO MODELO ---
@@ -183,9 +183,9 @@ def checkJumpCrouch(image, results, base_y):
 
 # --- WEBCAM ---
 cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 960)
-cap.set(cv2.CAP_PROP_FPS, 30)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 720)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+
 
 prev_time = time.time()
 print("\n" + "=" * 50)
