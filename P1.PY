@@ -8,7 +8,7 @@ UDP_PORT = 5005
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-def enviar_estado(poscarril, poshorizontal, velocidad, repeticiones=50, delay=0.01):
+def enviar_estado(poscarril, poshorizontal, velocidad, repeticiones=1, delay=0.01):
     """
     Envía un estado como JSON a Unity 'repeticiones' veces, con un pequeño delay.
     """
@@ -26,10 +26,18 @@ def enviar_estado(poscarril, poshorizontal, velocidad, repeticiones=50, delay=0.
 # === Secuencia de prueba ===
 time.sleep(3)  # esperar un segundo a que Unity esté listo
 while True:
-    enviar_estado("der", "jumping", 3)
+   
+    enviar_estado("centro", "jumping", 2)
+    time.sleep(1)
     enviar_estado("centro", "", 1)
+    time.sleep(2)
     enviar_estado("der", "", 3)
-    
+    time.sleep(2)
     enviar_estado("izq", "", 2)
+    time.sleep(2)
     enviar_estado("centro", "crouching", 1)
-    enviar_estado("centro", "", 0)
+    
+    time.sleep(2)
+    enviar_estado("centro", "", -3)
+    enviar_estado("centro", "", -3)
+    time.sleep(2)

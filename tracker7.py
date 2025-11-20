@@ -251,11 +251,12 @@ while cap.isOpened():
                 l_sh_y = results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER].y * h
                 r_sh_y = results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_SHOULDER].y * h
                 linea_hombros = (l_sh_y + r_sh_y) / 2
+               
                 print("[INIT] Tracking iniciado")
             else:
                 empezo = False
                 linea_hombros = None
-                velocidad_actual = 0
+                velocidad  = -3
                 print("[RESET] Tracking reiniciado")
             last_toggle_time = now
 
